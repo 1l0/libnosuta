@@ -52,6 +52,12 @@ set(libnosuta_bundled_libraries
   PARENT_SCOPE
 )
 
+set(INSTALL_BUNDLE_LIB_DIR "${CMAKE_INSTALL_PREFIX}")
+set(LIBNOSUTA_LIB "libnosuta.dll")
+set(LIBNOSUTA_LIB_PATH "${CMAKE_CURRENT_SOURCE_DIR}/shared/${LIBNOSUTA_LIB}")
+install(CODE "file(REMOVE_RECURSE \"${INSTALL_BUNDLE_LIB_DIR}/${LIBNOSUTA_LIB}\")" COMPONENT Runtime)
+install(FILES "${LIBNOSUTA_LIB_PATH}" DESTINATION "${INSTALL_BUNDLE_LIB_DIR}" COMPONENT Runtime)
+
 # === Tests ===
 # These unit tests can be run from a terminal after building the example, or
 # from Visual Studio after opening the generated solution file.

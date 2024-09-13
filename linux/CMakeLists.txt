@@ -44,8 +44,10 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE PkgConfig::GTK)
 # List of absolute paths to libraries that should be bundled with the plugin.
 # This list could contain prebuilt libraries, or libraries created by an
 # external build triggered from this build file.
+set(LIBNOSUTA_LIB "libnosuta.so")
+set(LIBNOSUTA_LIB_PATH "${CMAKE_CURRENT_SOURCE_DIR}/shared/${CMAKE_SYSTEM_PROCESSOR}/${LIBNOSUTA_LIB}")
 set(libnosuta_bundled_libraries
-  ""
+  ${LIBNOSUTA_LIB_PATH}
   PARENT_SCOPE
 )
 
