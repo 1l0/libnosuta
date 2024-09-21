@@ -1,6 +1,6 @@
 name: libnosuta
 description: native libs for nosuta
-version: 0.0.1
+version: 0.8.0
 publish_to: none
 
 environment:
